@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.konyv{
+    margin-top: 50px;
+    height: 450px;
+    width: 300px;
+    perspective: 1500px;
+    position: relative;
+    transition-duration: 1s;
+    
+}
+input{
+    display: none;
+}
+.fedolap, .hatlap{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lap{
+    position: absolute;
+    z-index: 0;
+    background-color: antiquewhite;
+    width: 250px;
+    height: 400px;
+    margin-top: 25px;
+    margin-left: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+.fedolap{
+    transform: rotateY(0deg);
+    position: absolute;
+    z-index: 2;
+    transform-origin: left;
+    transition: transform 3s;
+    backface-visibility: hidden;
+
+}
+.fedolap img{
+    position: absolute;
+    height: 300px;
+    left: 60px;
+    top: 120px;
+}
+.fedolap-hatulja{
+    transform: rotateY(180deg);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	z-index: ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hatlap{
+    position: relative;
+    z-index: -1;
+}
+
+    
+
+.fedolap label {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+#fedolap-checkbox:checked ~ .konyv {
+    transform: translateX(200px);
+}
+#fedolap-checkbox:checked ~ .konyv .fedolap  {
+    transform: rotateY(-180deg);
+    
+}
+
+
