@@ -1,113 +1,114 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 body{
-    display: flex;
+    height: 100vh;
+    background-color:burlywood;
+    display:flex;
     align-items: center;
     justify-content: center;
-
 }
 .konyv{
-    margin-top: 50px;
-    height: 450px;
-    width: 300px;
-    perspective: 1500px;
-    position: relative;
-    transition-duration: 1s;
-    
+    width: 350px;
+	height: 450px;
+	position: relative;
+	transition-duration: 1s;
+	perspective: 1500;
 }
-input{
-    display: none;
-}
-.fedolap, .hatlap{
-    height: 100%;
-    width: 100%;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.lap{
-    position: absolute;
-    z-index: 0;
-    background-color: antiquewhite;
-    width: 250px;
-    height: 400px;
-    margin-top: 25px;
-    margin-left: 20px;
-
-}
-
-
-
-
-
-
-
-
-
-.fedolap{
-    transform: rotateY(0deg);
-    position: absolute;
-    z-index: 2;
-    transform-origin: left;
-    transition: transform 3s;
-    backface-visibility: hidden;
-
-}
-.fedolap img{
-    position: absolute;
-    height: 300px;
-    left: 60px;
-    top: 120px;
-}
-.fedolap-hatulja{
-    transform: rotateY(180deg);
-	position: absolute;
+.fedolap, .hatlap {
+	background-color: #000;
 	width: 100%;
 	height: 100%;
+	border-radius: 0 15px 15px 0;
+	box-shadow: 0 0 5px rgb(41, 41, 41);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform-origin: center left;
+}
+.fedolap{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+}
+.fedolap-hatulja{
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	border-radius: 15px 0 0 15px ;
+	background-color: aliceblue;
+	transform: rotateY(-180deg);
 	backface-visibility: hidden;
-	z-index: ;
+	box-sizing: border-box;}
+
+.lapok{
+	margin-top: 22px;
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	border-radius:  0 15px 15px 0 ;
+	background-color: aliceblue;
+	transform: rotateY(0deg);
+	transform-origin: left;
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 }
+#lap1 p{
+ align-self: flex-end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+#lap1 label{
+	position: absolute;
+	height: 100%;
+	width:100%;
+	cursor: pointer;
+}
 
 
 
 .hatlap{
-    position: relative;
-    z-index: -1;
+	position: absolute;
+	z-index: -1;
 }
+input{
+	display: none;
+}
+.fedolap label{
+	position: relative;
+	height: 100%;
+	width:100%;
+	cursor: pointer;
+	
+}
+.fedolap-hatulja label{
+	
+	position:absolute;
+	border-radius: 15px 0 0 15px ;
+	height: 100%;
+	width:100%;
+	cursor: pointer;
+}
+#checkbox-fedolap:checked ~ .konyv{
+	transform: translateX(150px);
+	}
+#checkbox-fedolap:checked ~ .konyv .fedolap{
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index: 1;
+}
+#checkbox1:checked ~ .konyv #lap1{
 
-    
-
-.fedolap label {
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index: 2;
 }
-#fedolap-checkbox:checked ~ .konyv {
-    transform: translateX(200px);
-}
-#fedolap-checkbox:checked ~ .konyv .fedolap  {
-    transform: rotateY(-180deg);
-    
-}
-
 
