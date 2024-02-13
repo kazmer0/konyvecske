@@ -32,9 +32,10 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 2;
+	z-index: 6;
 	transform: rotateY(0deg);
 	transform-style: preserve-3d;
+	transition: transform 2s;
 }
 .fedolap-hatulja{
 	position: absolute;
@@ -44,7 +45,10 @@ body{
 	background-color: aliceblue;
 	transform: rotateY(-180deg);
 	backface-visibility: hidden;
-	box-sizing: border-box;}
+	box-sizing: border-box;
+	left:1px;
+}
+	
 
 .lapok{
 	margin-top: 22px;
@@ -56,25 +60,77 @@ body{
 	transform: rotateY(0deg);
 	transform-origin: left;
 	transform-style: preserve-3d;
-	box-sizing: border-box;
+	transition: transform 2s;
+}
+#lap1{
+	z-index: 5;
+}
+#lap1-eleje {
+	z-index: 5;
+	backface-visibility: hidden;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-
 }
-#lap1 p{
- align-self: flex-end;
-
+#lap1-eleje p{
+	position:absolute;
+	top:40%;
 }
-#lap1 label{
-	position: absolute;
-	height: 100%;
-	width:100%;
-	cursor: pointer;
+#lap1-hatulja{
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
 }
-
-
-
+#lap2{
+	z-index: 4;
+}
+#lap2-eleje {
+	z-index: 4;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+}
+#lap2-hatulja{
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+#lap3{
+	z-index: 3;
+}
+#lap3-eleje {
+	z-index: 3;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+}
+#lap3-hatulja{
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+#lap4{
+	z-index: 2;
+}
+#lap4-eleje {
+	z-index: 2;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+}
+#lap4-hatulja{
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+#lap5{
+	z-index: 1;
+}
+#lap5-eleje {
+	z-index: 1;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+}
+#lap5-hatulja{
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
 .hatlap{
 	position: absolute;
 	z-index: -1;
@@ -97,11 +153,30 @@ input{
 	width:100%;
 	cursor: pointer;
 }
+.elore, .hatra{
+	background-color: rgb(202, 175, 134);
+	height: 20px;
+	width: 15px;
+	border-radius: 50%;
+	padding-left: 10px;
+	cursor: pointer;
+	
+}
+.elore{
+	position: absolute;
+	top: 370px;
+	left: 280px;
+}
+.hatra{
+	position: absolute;
+	top:350px;
+	left:10px;
+}
 #checkbox-fedolap:checked ~ .konyv{
 	transform: translateX(150px);
 	}
 #checkbox-fedolap:checked ~ .konyv .fedolap{
-	transition-duration: 3s;
+	transition: transform 1.5s, z-index 0.5s 0.5s;
   	transform: rotateY(-180deg);
 	z-index: 1;
 }
@@ -109,6 +184,29 @@ input{
 
 	transition-duration: 3s;
   	transform: rotateY(-180deg);
-	z-index: 2;
+	z-index:2;
 }
+#checkbox2:checked ~ .konyv #lap2{
 
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index:3;
+}
+#checkbox3:checked ~ .konyv #lap3{
+
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index:4;
+}
+#checkbox4:checked ~ .konyv #lap4{
+
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index:5;
+}
+#checkbox5:checked ~ .konyv #lap5{
+
+	transition-duration: 3s;
+  	transform: rotateY(-180deg);
+	z-index:6;
+}
